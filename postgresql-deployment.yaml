@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: postgresql
-        image: postgres:latest
+        image: postgres1:latest
         env:
         - name: POSTGRES_DB
           value: mydatabase
@@ -25,7 +25,7 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: pv1
+          name: postgresql-storage
       volumes:
       - name: postgresql-storage
         persistentVolumeClaim:

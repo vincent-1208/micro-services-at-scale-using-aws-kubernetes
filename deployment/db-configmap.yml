@@ -3,7 +3,7 @@ kind: ConfigMap
 data:
   DB_USERNAME: "myuser"
   DB_NAME: "mydatabase"
-  DB_HOST: "postgres-svc-postgresql.default.svc.cluster.local"
+  DB_HOST: "postgresql-service"
   DB_PORT: "5433"
   APP_PORT: "5153"
 metadata:
