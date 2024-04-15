@@ -85,7 +85,7 @@ There are multiple ways to set environment variables in a command. They can be s
 * `DB_PASSWORD`
 * `DB_HOST` (defaults to `127.0.0.1`)
 * `DB_PORT` (defaults to `5432`)
-* `DB_NAME` (defaults to `postgres`)
+* `DB_NAME` (defaults to `mydatabase`)
 
 If we set the environment variables by prepending them, it would look like the following:
 ```bash
