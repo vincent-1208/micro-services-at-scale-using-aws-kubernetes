@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coworking-api
+  name: coworking
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: coworking-api
+    app.kubernetes.io/name: coworking
   ports:
   - name: "5153"
     protocol: TCP
@@ -15,22 +15,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: coworking-api
+  name: coworking
   labels:
-    name: coworking-api
+    name: coworking
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: coworking-api
+      service: coworking
   template:
     metadata:
       labels:
-        service: coworking-api
+        service: coworking
     spec:
       containers:
-      - name: coworking-api
-        image: 677125428115.dkr.ecr.us-east-1.amazonaws.com/kokono-app-container:latest
+      - name: coworking
+        image: 677125428115.dkr.ecr.us-east-1.amazonaws.com/kokono-my-repository:latest-3
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -75,4 +75,5 @@ spec:
             configMapKeyRef:
               name: db-env
               key: DB_HOST
+
       restartPolicy: Always

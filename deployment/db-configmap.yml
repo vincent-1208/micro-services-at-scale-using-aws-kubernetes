@@ -4,7 +4,7 @@ data:
   DB_USERNAME: "myuser"
   DB_NAME: "mydatabase"
   DB_HOST: "postgresql-service"
-  DB_PORT: "5433"
+  DB_PORT: "5432"
   APP_PORT: "5153"
 metadata:
   name: db-env
