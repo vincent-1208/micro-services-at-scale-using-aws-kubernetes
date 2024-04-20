@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: coworking
+    service: coworking
   ports:
   - name: "5153"
     protocol: TCP
@@ -29,8 +29,8 @@ spec:
         service: coworking
     spec:
       containers:
-      - name: coworking
-        image: 677125428115.dkr.ecr.us-east-1.amazonaws.com/kokono-my-repository:latest-3
+      - name: kokono-image-analytics
+        image: 941233883352.dkr.ecr.us-east-1.amazonaws.com/kokono-image-analytics:4
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
