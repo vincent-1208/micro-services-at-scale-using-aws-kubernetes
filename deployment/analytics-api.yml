@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: kokono-image-analytics
-        image: 941233883352.dkr.ecr.us-east-1.amazonaws.com/kokono-image-analytics:4
+        image: 941233883352.dkr.ecr.us-east-1.amazonaws.com/kokono-image-analytics:$CODEBUILD_BUILD_NUMBER 
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
